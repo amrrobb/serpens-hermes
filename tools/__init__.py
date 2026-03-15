@@ -155,6 +155,15 @@ from .delegate_tool import (
     DELEGATE_TASK_SCHEMA,
 )
 
+# Web3 tools (CADUCEUS - custom EVM/DeFi intelligence tools)
+try:
+    from . import web3_tools
+    from . import web3_security_tools
+    from . import web3_defi_tools
+except ImportError as e:
+    import logging
+    logging.getLogger(__name__).warning(f"Web3 tools not available: {e}")
+
 # File tools have no external requirements - they use the terminal backend
 def check_file_requirements():
     """File tools only require terminal backend to be available."""

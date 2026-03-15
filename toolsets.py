@@ -60,6 +60,11 @@ _HERMES_CORE_TOOLS = [
     "schedule_cronjob", "list_cronjobs", "remove_cronjob",
     # Cross-platform messaging (gated on gateway running via check_fn)
     "send_message",
+    # Web3 tools (CADUCEUS - on-chain intelligence)
+    "get_token_info", "get_eth_balance", "get_token_price",
+    "scan_token_security", "check_address_risk", "get_contract_source",
+    "analyze_contract_security", "analyze_wallet", "get_whale_movements",
+    "get_defi_positions", "get_protocol_tvl",
     # Honcho memory tools (gated on honcho being active via check_fn)
     "honcho_context", "honcho_profile", "honcho_search", "honcho_conclude",
     # Home Assistant smart home control (gated on HASS_TOKEN via check_fn)
@@ -127,6 +132,17 @@ TOOLSETS = {
     "cronjob": {
         "description": "Cronjob management tools - schedule, list, and remove automated tasks",
         "tools": ["schedule_cronjob", "list_cronjobs", "remove_cronjob"],
+        "includes": []
+    },
+
+    "web3": {
+        "description": "Web3 on-chain intelligence tools - token analysis, contract auditing, wallet profiling, DeFi monitoring",
+        "tools": [
+            "get_token_info", "get_eth_balance", "get_token_price",
+            "scan_token_security", "check_address_risk", "get_contract_source",
+            "analyze_contract_security", "analyze_wallet", "get_whale_movements",
+            "get_defi_positions", "get_protocol_tvl",
+        ],
         "includes": []
     },
     

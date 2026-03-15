@@ -171,6 +171,12 @@ logger = logging.getLogger(__name__)
 
 def _resolve_runtime_agent_kwargs() -> dict:
     """Resolve provider credentials for gateway-created AIAgent instances."""
+    # Re-read .env to pick up token changes (OAuth tokens rotate)
+    from dotenv import load_dotenv
+    _env_path = _hermes_home / ".env"
+    if _env_path.exists():
+        load_dotenv(dotenv_path=_env_path, override=True)
+
     from hermes_cli.runtime_provider import (
         resolve_runtime_provider,
         format_runtime_provider_error,
