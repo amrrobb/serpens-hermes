@@ -35,11 +35,11 @@ RPCS = {
 }
 
 EXPLORER_APIS = {
-    "ethereum": "https://api.etherscan.io/api",
-    "polygon": "https://api.polygonscan.com/api",
-    "arbitrum": "https://api.arbiscan.io/api",
-    "base": "https://api.basescan.org/api",
-    "bsc": "https://api.bscscan.com/api",
+    "ethereum": "https://api.etherscan.io/v2/api?chainid=1",
+    "polygon": "https://api.etherscan.io/v2/api?chainid=137",
+    "arbitrum": "https://api.etherscan.io/v2/api?chainid=42161",
+    "base": "https://api.etherscan.io/v2/api?chainid=8453",
+    "bsc": "https://api.etherscan.io/v2/api?chainid=56",
 }
 
 HTTP_TIMEOUT = 10  # seconds
